@@ -1,0 +1,175 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "starscript",
+	"patterns": [
+		
+		{
+			"include": "#comments-block"
+		},
+		{
+			"include": "#comments-inline"
+		},
+		{
+			"include": "#sections"
+		},
+		{
+			"include": "#dialogue-inline"
+		},
+		{
+			"include": "#dialogue-inline2"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#booleans"
+		},
+		{
+			"include": "#floats"
+		},
+		{
+			"include": "#integers"
+		}
+		
+	],
+	"repository": {
+		"dialogue-inline": {
+			"name": "none",
+			"begin": "\\* ",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "entity.other.attribute-name.html",
+					"match": ",.*?:"
+				},
+				{
+					"name": "keyword.control",
+					"match": "\\[\\/?.*?\\]"
+				},
+				{
+					"name": "string",
+					"match": "\\%\\w+\\%"
+				}
+			]
+		},
+		"dialogue-inline2": {
+			"name": "none",
+			"begin": "- ",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "entity.other.attribute-name.html",
+					"match": ",.*?:"
+				},
+				{
+					"name": "keyword.control",
+					"match": "\\[\\/?.*?\\]"
+				},
+				{
+					"name": "string",
+					"match": "\\%\\w+\\%"
+				}
+			]
+		},
+		"comments-inline": {
+			"name": "comment.line.number-sign",
+			"begin": "#",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "entity.other.attribute-name.html",
+					"match": "TODO"
+				},
+				{
+					"name": "keyword.control",
+					"match": "WARNING"
+				}
+			]
+			
+		},
+		"comments-block": {
+			"name": "comment.block",
+			"begin": "###",
+			"end": "###",
+			"patterns": []
+		},
+		"sections": {
+			"patterns": [
+				{
+					"name": "keyword.control",
+					"match": "--\\S+\\n"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control",
+					"match": "\\b(if|unless|else|while|until|for|loop|return|break|next|speech_scale|pose)\\b"
+				},
+				{
+					"name": "constant.numeric",
+					"match": "\\b(call|save|feedback|load|preload|unload)\\b"
+				},
+				{
+					"name": "keyword.control",
+					"match": "\\b(print|fact|set|get|has|dump_data|resource)\\b"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "\\b(mvto|mvadd|face|angle|action|balloon|anim|lock|unlock)\\b"
+				},
+				{
+					"name": "keyword.control",
+					"match": "\\b(bgm|play|resume|restart|stack|pop|pause|fade|in|out|sfx|vfx|bgs)\\b"
+				},
+				{
+					"name": "keyword.control",
+					"match": "\\b(item|give|take|stat|minigame|stfx|stat|increase|decrease)\\b"
+				},
+				{
+					"name": "string.quoted",
+					"match": "\\b(choice|cancel)\\b"
+				},
+				{
+					"name": "constant.numeric",
+					"match": "\\b(with|wait|await|exit|checkpoint|goto|line|section)\\b"
+				},
+				{
+					"name": "string.quoted",
+					"match": "\\b(NORTH|NORTHEAST|EAST|SOUTHEAST|SOUTH|SOUTHWEST|WEST|NORTHWEST)\\b"
+				}
+			]
+		},
+		"booleans": {
+			"patterns": [
+				{
+					"name": "keyword.other",
+					"match": "\\b(true|false|yes|no|on|off|1b(?!\\d)|0b(?!\\d))\\b"
+				}
+			]
+		},
+		"floats": {
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "\\b-?[0-9][0-9_]*(?:\\.[0-9][0-9_]*)?f?\\b"
+				}
+			]
+		},
+		"integers": {
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "\\b-?(0b[01OX\\□\\■_]+|0o[0-8_]+|[0-9_])\\b"
+				},
+				{
+					"name": "constant.rgb-value",
+					"match": "\\b-?0x([A-Fa-f0-9_]+)\\b"
+				}
+			]
+		}
+		
+	},
+	"scopeName": "source.starscript"
+}

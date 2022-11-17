@@ -1,7 +1,7 @@
 {
-  "name": "nano",
-  "displayName": "Nano",
-  "description": "Support for the 'Nano' programming language.",
+  "name": "starscript",
+  "displayName": "StarScript",
+  "description": "Support for the StarEngine scripting language.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.70.0"
@@ -11,15 +11,15 @@
   ],
   "contributes": {
     "languages": [{
-      "id": "nano",
-      "aliases": ["Nano", "nano"],
-      "extensions": [".nn",".nano",".nh"],
+      "id": "starscript",
+      "aliases": ["StarScript", "starscript"],
+      "extensions": [".ssh",".starscript",".sson"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
-      "language": "nano",
-      "scopeName": "source.nano",
-      "path": "./syntaxes/nano.tmLanguage.json"
+      "language": "starscript",
+      "scopeName": "source.starscript",
+      "path": "./syntaxes/ssh.tmLanguage.json"
     }]
   }
 }
