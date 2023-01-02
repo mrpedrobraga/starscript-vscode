@@ -121,11 +121,11 @@
 				},
 				{
 					"name": "keyword.control",
-					"match": "\\b(bgm|play|resume|restart|stack|pop|pause|fade|in|out|sfx|vfx|bgs)\\b"
+					"match": "\\b(bgm|play|resume|restart|stack|pop|pause|fade|in|out|sfx|vfx|bgs|battle|join|dismiss)\\b"
 				},
 				{
 					"name": "keyword.control",
-					"match": "\\b(item|give|take|stat|minigame|stfx|stat|increase|decrease)\\b"
+					"match": "\\b(warp|transition|item|give|take|stat|minigame|stfx|stat|increase|decrease)\\b"
 				},
 				{
 					"name": "string.quoted",
@@ -137,7 +137,7 @@
 				},
 				{
 					"name": "string.quoted",
-					"match": "\\b(NORTH|NORTHEAST|EAST|SOUTHEAST|SOUTH|SOUTHWEST|WEST|NORTHWEST)\\b"
+					"match": "\\b(NORTH|NORTHEAST|EAST|SOUTHEAST|SOUTH|SOUTHWEST|WEST|NORTHWEST|white|black|FADE|SWIPE|CUT)\\b"
 				}
 			]
 		},
